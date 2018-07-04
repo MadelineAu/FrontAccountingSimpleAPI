@@ -9,6 +9,26 @@ include_once($path_to_root . "/includes/banking.inc");
 class Currencies
 {
     // Get Items
+	
+	/**
+     * @SWG\Get(
+     *   path="/currencies",
+     *   summary="List all currencies",
+     *   tags={"currencies"},
+     *   operationId="listCurrencies",
+     *   produces={"application/json"},
+     *   @SWG\Response(
+     *     response=200,
+     *     description="successful operation",
+     *     @SWG\Schema(
+     *       type="array",
+     *       @SWG\Items(ref="#/definitions/Currency")
+     *     )
+     *   ),
+     *   deprecated=false
+     * )
+     */
+	 
     public function get($rest)
     {
         $req = $rest->request();
